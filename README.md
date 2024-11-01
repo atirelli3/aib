@@ -1,15 +1,20 @@
 # Archlinux Image Builder - `aib`
 
-**How can I build my system using `aib`?** It's as simple as running a single command:
+All cool, but **How can I build my system using `aib`?** It's as simple as running a single command:
 
 ```bash
 ./aib <action> <file.yml>
+```
+Example:
 
-# Example
+```bash
 ./aib build myarch.yml
 ```
 
 Here are some key **Archlinux Image Builder** constraints built into the system. Each constraint is designed to maximize system stability and security without delving into the complexities of Archlinux, resulting in a concise and readable configuration file for easier maintenance over time:
+
+> [!IMPORTANT]
+> For all the security reasons listed in the grub section below, it is MANDATORY that the system runs in UEFI mode.
 
 - **`btrfs`** is the chosen **filesystem**, enabling the creation of system *snapshots*. If an update causes issues (a common occurrence on Archlinux), you can "go back in time" to restore a working state.
 - **`grub`** is the selected **bootloader** due to its simplicity and widespread use.
